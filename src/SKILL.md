@@ -2,6 +2,8 @@
 
 Interact with Pinata's IPFS storage services for file management, groups, gateways, signatures, payments, and AI-powered vector search.
 
+Repo: https://github.com/PinataCloud/pinata-api-skill
+
 ## Setup
 
 Set the following environment variables:
