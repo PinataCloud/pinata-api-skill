@@ -9,6 +9,8 @@ metadata: {"openclaw": {"emoji": "📌", "requires": {"env": ["PINATA_JWT", "GAT
 
 Access the Pinata IPFS storage API. Upload files, manage groups, create gateways, add signatures, set up x402 payments, and perform AI-powered vector search.
 
+Repo: https://github.com/PinataCloud/pinata-api-skill
+
 ## Authentication
 
 All requests require a Pinata JWT in the Authorization header:
@@ -429,3 +431,4 @@ curl -s -X POST "https://uploads.pinata.cloud/v3/vectorize/groups/{group_id}/que
 - [API Keys](https://app.pinata.cloud/developers/api-keys)
 - [Gateway Setup](https://docs.pinata.cloud/gateways)
 - [x402 Protocol](https://docs.pinata.cloud/x402)
+- [Source (GitHub)](https://github.com/PinataCloud/pinata-api-skill)
