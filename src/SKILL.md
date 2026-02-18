@@ -103,36 +103,10 @@ Uses `multipart/form-data`. Do **not** set `Content-Type` manually — let the H
 ```bash
 curl -s -X POST "https://uploads.pinata.cloud/v3/files" \
   -H "Authorization: Bearer $PINATA_JWT" \
-  -F "file=@/path/to/file.png" \
+  -F "file=@FILE_PATH" \
   -F "network=public" \
-  -F "group_id={group_id}" \
+  -F "group_id=GROUP_ID" \
   -F 'keyvalues={"key":"value"}'
-```
-
-```javascript
-const fs = require('fs');
-const FormData = require('form-data');
-
-const form = new FormData();
-form.append('file', fs.createReadStream('/path/to/file.png'));
-form.append('network', 'public');
-
-const response = await fetch('https://uploads.pinata.cloud/v3/files', {
-  method: 'POST',
-  headers: { 'Authorization': `Bearer ${process.env.PINATA_JWT}` },
-  body: form,
-});
-```
-
-```python
-import os, requests
-
-response = requests.post(
-    'https://uploads.pinata.cloud/v3/files',
-    headers={'Authorization': f'Bearer {os.environ["PINATA_JWT"]}'},
-    files={'file': open('/path/to/file.png', 'rb')},
-    data={'network': 'public'},
-)
 ```
 
 Optional form fields: `network`, `group_id`, `keyvalues` (JSON string)
@@ -220,9 +194,9 @@ curl -s -X POST "https://api.pinata.cloud/v3/files/private/download_link" \
   -H "Authorization: Bearer $PINATA_JWT" \
   -H "Content-Type: application/json" \
   -d '{
-    "url": "https://'"$GATEWAY_URL"'/files/{cid}",
+    "url": "https://YOUR_GATEWAY_URL/files/YOUR_CID",
     "expires": 600,
-    "date": '"$(date +%s)"',
+    "date": CURRENT_UNIX_TIMESTAMP,
     "method": "GET"
   }'
 ```
@@ -245,7 +219,7 @@ curl -s -X POST "https://uploads.pinata.cloud/v3/files/sign" \
   -H "Authorization: Bearer $PINATA_JWT" \
   -H "Content-Type: application/json" \
   -d '{
-    "date": '"$(date +%s)"',
+    "date": CURRENT_UNIX_TIMESTAMP,
     "expires": 3600
   }'
 ```
