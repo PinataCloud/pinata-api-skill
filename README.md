@@ -11,8 +11,8 @@ Set the following environment variables:
 | Variable | Required | Description |
 |----------|----------|-------------|
 | `PINATA_JWT` | Yes | Your Pinata API JWT token |
-| `GATEWAY_URL` | Yes | Your Pinata gateway domain (e.g., `your-gateway.mypinata.cloud`) |
-| `GATEWAY_KEY` | No | Gateway key for accessing public IPFS content not tied to your account. See [Gateway Access Controls](https://docs.pinata.cloud/gateways/gateway-access-controls#gateway-keys) |
+| `PINATA_GATEWAY_URL` | Yes | Your Pinata gateway domain (e.g., `your-gateway.mypinata.cloud`) |
+| `PINATA_GATEWAY_KEY` | No | Gateway key for accessing public IPFS content not tied to your account. See [Gateway Access Controls](https://docs.pinata.cloud/gateways/gateway-access-controls#gateway-keys) |
 
 ## Available Functions
 
